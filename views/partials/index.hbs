@@ -1,0 +1,60 @@
+<section class="section py-2">
+    <div class="container text-center">
+        <div class="title py-2">
+            <h1 class="header-title">Audio Upload & Analysis</h1>
+            <p class="subtitle">Upload Files to the <strong>Server</strong></p>
+        </div>
+        <div class="row justify-content-center my-5">
+            <div class="col-6">
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="file" class="form-control" name="audio-file" id="files" accept=".wav,.mp3" multiple>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="en-US/hi-IN" id="language_type" name="language-type" text="en-US"></label>
+                        </div>
+                        <div class="col-md-2">
+                            <button id="submit-btn" class="btn btn-warning">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <section class="mt-5">
+            <div class="row">
+                {{#each files_arr}}
+                    {{#each this}}
+                        {{#if filename}}
+                        {{!-- bootstrap cards --}}
+                            <div class="col-md-3 col-sm-4 col mb-4">
+                                <div class="card shadow">
+                                    <div class="card-img-top img-fluid">
+                                        <img class="file_upload" src="./file.svg" alt="Card image cap" draggable="false">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title font-poppins">{{originalname}}</h5>
+                                        <p class="text-secondary font-size-05">{{_id}}</p>
+                                        <p class="text-secondary font-size-09">Status: {{job_status}}</p>
+                                        <a href="{{download_link}}" download="{{download_link}}" class="btn btn-info font-size-09 text-light">Download</a>
+                                    </div>
+                                    <div class="overlay" id="overlay">
+                                        <div class="loading spinner-border" role="status">
+                                            <span class="sr-only"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{!--/bootstrap cards  --}}
+                        {{/if}}
+                    {{/each}}
+                {{/each}}
+            </div>
+        </section>
+    </div>
+</section>
+<script>
+    setTimeout(function(){
+        location=''
+    },12000);
+</script>

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-poppins{
+    font-family: 'Poppins', sans-serif;
+}
+
+.font-size-09{
+    font-size: .9em;
+}
+
+input:focus{
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+img{
+    background-size:cover; 
+}
+
+:root{
+    --main-bg-color: #eff5fe;
+    --border-color: #0288d147;
+    --header-bg-color: #FC4E4E;
+}
+
+body, html, section{
+    font-family: system-ui;
+    background: var(--main-bg-color);
+    padding: 0;
+    margin: 0;
+}
+
+.file_upload{
+    margin: 25px;
+    width: 100px;
+}
+
+.download{
+    width: 45px;
+}
+
+.overlay{
+    background: rgb(235, 231, 231);
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    display: none;
+    /* display: flex; */
+}
+
+.loading{
+    position: relative;
+}
