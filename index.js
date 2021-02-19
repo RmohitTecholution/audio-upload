@@ -24,7 +24,7 @@ app.engine('hbs', hbs({
 //calling routes
 app.use('/', require('./server/router/router'));
 
-const PORT = proess.env.PORT || 3000;
+const PORT = proess.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server Listening on port ${PORT}...`);
 });
